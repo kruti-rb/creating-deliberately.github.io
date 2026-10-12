@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untitled</title>
+  <meta name="description" content="A life, a page at a time.">
+  <meta name="theme-color" content="#09071f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-view="home">
+
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <!-- ─────────── Tabs ─────────── -->
+  <header class="nav">
+    <a class="nav-brand" href="#/" data-book="title"></a>
+    <nav class="nav-tabs" id="nav-tabs" aria-label="Sections">
+      <a href="#/" data-tab="home">Home</a>
+      <a href="#/musings" data-tab="musings">Bookish Musings</a>
+      <a href="#/career" data-tab="career">Career Trails</a>
+      <a href="#/happenings" data-tab="happenings">Happenings</a>
+      <a href="#/pursuits" data-tab="pursuits">Pursuits</a>
+      <a href="#/flows" data-tab="flows">Rhythmic Flows</a>
+    </nav>
+  </header>
+
+  <!-- ─────────── Home: cover + contents ─────────── -->
+  <main id="home" class="view">
+    <header class="cover">
+      <div class="cover-inner">
+        <p class="eyebrow" data-book="eyebrow"></p>
+        <h1><span class="cover-title" data-book="title"></span></h1>
+        <p class="cover-tagline" data-book="tagline"></p>
+        <div class="cover-actions">
+          <a class="btn" id="read-latest" href="#/">Read the latest page <span aria-hidden="true">→</span></a>
+          <button class="link" id="to-contents" type="button">Contents <span aria-hidden="true">↓</span></button>
+        </div>
+      </div>
+
+      <!-- The floating stickers. They are drawn in js/stickers.js; reorder, remove or repeat names here. -->
+      <div class="stickers" aria-hidden="true"
+           data-stickers="rocket music bridge pen astronaut flowers spacecraft dance books ballot earth nerdy"></div>
+    </header>
+
+    <section class="contents" id="contents" aria-labelledby="contents-heading">
+      <div class="contents-head">
+        <h2 id="contents-heading">Contents</h2>
+        <p class="contents-meta" id="contents-meta"></p>
+      </div>
+      <ol class="toc" id="toc" reversed></ol>
+    </section>
+
+    <footer class="colophon">
+      <span aria-hidden="true">✦</span>
+      <p data-book="colophon"></p>
+    </footer>
+  </main>
+
+  <!-- ─────────── Bookish Musings, Career Trails, Happenings, Pursuits, Rhythmic Flows ─────────── -->
+  <main id="section" class="view" hidden></main>
+
+  <!-- ─────────── Reader: a single page of the book, a musing, or a flow ─────────── -->
+  <main id="reader" class="view" hidden>
+    <article id="page"></article>
+  </main>
+
+  <script src="js/entries.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/stickers.js"></script>
+  <script src="js/sky.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
